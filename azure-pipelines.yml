@@ -1,6 +1,7 @@
 trigger:
 - '*'
 
+pool: piotrc-agent-pools
 # variables:
 #   buildConfiguration: 'Release'
 
@@ -10,16 +11,19 @@ stages:
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
-    pool:
-      vmImage: 'ubuntu-20.04'
-      demands:
-      - npm
+      #  vmImage: 'ubuntu-20.04'
+      #  demands:
+      # - npm
 
     # variables:
     #   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
     #   dotnetSdkVersion: '3.x'
 
     steps:
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: 'sudo apt install npm'
     - task: UseDotNet@2
       displayName: 'Use .NET SDK $(dotnetSdkVersion)'
       inputs:
@@ -70,8 +74,8 @@ stages:
   dependsOn: Build
   jobs:
   - deployment: Deploy
-    pool:
-      vmImage: 'ubuntu-20.04'
+    # pool:
+    #   vmImage: 'ubuntu-20.04'
     environment: spike
     # variables:
     # - group: Release
