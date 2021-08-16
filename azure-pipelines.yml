@@ -1,7 +1,7 @@
 trigger:
 - '*'
 
-pool: piotrc-agent-pools
+pool: vmssbuildagents
 # variables:
 #   buildConfiguration: 'Release'
 
@@ -24,6 +24,7 @@ stages:
       inputs:
         targetType: 'inline'
         script: 'sudo apt install npm -y'
+    
     - task: UseDotNet@2
       displayName: 'Use .NET SDK $(dotnetSdkVersion)'
       inputs:
