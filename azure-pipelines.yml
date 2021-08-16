@@ -23,7 +23,7 @@ stages:
     - task: Bash@3
       inputs:
         targetType: 'inline'
-        script: 'sudo apt install npm'
+        script: 'sudo apt install npm -y'
     - task: UseDotNet@2
       displayName: 'Use .NET SDK $(dotnetSdkVersion)'
       inputs:
