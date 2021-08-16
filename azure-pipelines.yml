@@ -2,8 +2,9 @@ trigger:
 - '*'
 
 pool: piotrc-agent-pools
-# variables:
-#   buildConfiguration: 'Release'
+
+variables:
+  buildConfiguration: 'Release'
 
 stages:
 - stage: 'Build'
