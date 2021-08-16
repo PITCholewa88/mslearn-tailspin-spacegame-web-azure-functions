@@ -5,6 +5,7 @@ pool: piotrc-agent-pools
 
 variables:
   buildConfiguration: 'Release'
+  WebAppName: 'piotrc-tailspin-space-game-web-25362'
 
 stages:
 - stage: 'Build'
