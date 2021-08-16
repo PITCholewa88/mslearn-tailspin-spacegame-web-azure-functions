@@ -1,7 +1,7 @@
 trigger:
 - '*'
 
-pool: vmssbuildagents
+pool: piotrc-agent-pools
 # variables:
 #   buildConfiguration: 'Release'
 
