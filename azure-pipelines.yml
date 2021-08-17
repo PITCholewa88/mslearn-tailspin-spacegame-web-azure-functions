@@ -7,6 +7,7 @@ variables:
   buildConfiguration: 'Release'
   WebAppName: 'piotrc-tailspin-space-game-web-25362'
   LeaderboardAppName: 'piotrc-tailspin-space-game-leaderboard-25362'
+  ResourceGroupName: 'piotrc-tailspin-space-game-rg'
 
 stages:
 - stage: 'Build'
